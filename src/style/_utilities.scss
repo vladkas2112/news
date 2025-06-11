@@ -1,0 +1,28 @@
+@use "variables" as *;
+
+.desktop-only {
+  @media (max-width: $mobile) {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  @media (min-width: $mobile) {
+    display: none !important;
+  }
+}
+
+// Search button styling
+.search-button {
+  background-color: $secondary-color;
+  border: none;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-sm;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($secondary-color, 5%);
+  }
+}

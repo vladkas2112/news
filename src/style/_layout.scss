@@ -1,0 +1,91 @@
+@use "variables" as *;
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: $mobile) {
+    padding: $spacing-xs;
+  }
+
+  @media (min-width: $mobile) {
+    padding: $spacing-lg;
+  }
+}
+
+.featured-news {
+  margin-bottom: $spacing-lg;
+}
+
+.news-list {
+  .section-header {
+    margin-bottom: $spacing-md;
+    padding: 0 $spacing-sm;
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: $text-color;
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+    }
+  }
+}
+
+.news-grid {
+  display: grid;
+  gap: $spacing-md;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: $mobile) and (max-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-sm;
+  }
+}
+
+// Breaking news banner
+.breaking-news {
+  background: $secondary-color;
+  padding: $spacing-xs $spacing-sm;
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  @media (max-width: $mobile) {
+    font-size: 0.8rem;
+  }
+
+  span {
+    color: #666;
+    margin-right: $spacing-sm;
+  }
+}
+
+// Weather widget (desktop only)
+.weather-widget {
+  display: none;
+
+  @media (min-width: $mobile) {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-sm $spacing-lg;
+    background: #f5f5f5;
+
+    &__location {
+      font-weight: 500;
+    }
+
+    &__temp {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+  }
+}

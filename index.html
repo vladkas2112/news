@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Material Design Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style/main.scss">
+  </head>
+  <body>
+    <div class="breaking-news">
+      <span>07:25</span> Najpierw usłyszeli huk, potem ostry pisk, a...
+    </div>
+
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">
+          <svg class="logo" width="120" height="32" viewBox="0 0 120 32">
+            <circle cx="16" cy="16" r="16" fill="#FFD700"/>
+            <text x="40" y="24" fill="#000" style="font-size: 24px; font-weight: bold;">onet</text>
+          </svg>
+        </div>
+
+        <div class="header__search">
+          <input type="text" placeholder="Szukaj">
+          <img src="/public/vite.svg" alt="Google" height="20">
+          <button class="search-button">SZUKAJ</button>
+        </div>
+
+        <nav class="header__nav">
+          <ul class="nav__list">
+            <li><a href="#" class="nav__link">WIADOMOŚCI</a></li>
+            <li><a href="#" class="nav__link">SPORT</a></li>
+            <li><a href="#" class="nav__link premium">PREMIUM</a></li>
+            <li><a href="#" class="nav__link">BIZNES</a></li>
+            <li class="desktop-only"><a href="#" class="nav__link">REGIONALNE</a></li>
+            <li class="desktop-only"><a href="#" class="nav__link">POGODA</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <button class="icon-button icon-button--notification"><i class="mdi mdi-bell"></i></button>
+          <button class="icon-button"><i class="mdi mdi-email"></i></button>
+          <button class="icon-button"><i class="mdi mdi-account"></i></button>
+        </div>
+      </div>
+
+      <div class="weather-widget desktop-only">
+        <div class="weather-widget__location">
+          Warszawa
+        </div>
+        <div class="weather-widget__temp">
+          24° <i class="mdi mdi-weather-sunny"></i>
+        </div>
+        <div class="weather-widget__forecast">
+          Jutro: 32° <i class="mdi mdi-weather-partly-cloudy"></i>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="featured-news">
+        <article class="news-card news-card--featured">
+          <div class="news-card__image">
+            <img src="https://picsum.photos/1200/600" alt="Plaża nad morzem">
+            <span class="news-card__badge premium">premium</span>
+          </div>
+          <div class="news-card__content">
+            <h2 class="news-card__title">Najlepsze miejsca na wakacje nad polskim morzem. Ranking plaż 2024</h2>
+            <div class="news-card__actions">
+              <button class="action-button"><i class="mdi mdi-thumb-up"></i> Lubię to</button>
+              <button class="action-button"><i class="mdi mdi-bookmark-outline"></i> Zapisz</button>
+              <button class="action-button"><i class="mdi mdi-share"></i> Udostępnij</button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="news-list">
+        <div class="section-header">
+          <h3><i class="mdi mdi-newspaper"></i> Wiadomości</h3>
+        </div>
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-card__image">
+              <img src="https://picsum.photos/400/300" alt="Putin">
+              <span class="news-card__badge premium">premium</span>
+            </div>
+            <div class="news-card__content">
+              <h3 class="news-card__title">Rosyjski politolog: Putin sprowadził na Rosję nową wojnę</h3>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card__image">
+              <img src="https://picsum.photos/400/301" alt="Boliwia">
+              <span class="news-card__badge category">W SKRÓCIE</span>
+            </div>
+            <div class="news-card__content">
+              <h3 class="news-card__title">Udaremniony zamach stanu w Boliwii. Podsumowanie nocy</h3>
+              <div class="news-card__meta">
+                <span>2 min czytania</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card__content">
+              <h3 class="news-card__title">Dolce vita Pawlaka. Ford bestia z USA i polędwica na koszt podatnika</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
