@@ -3,9 +3,10 @@
 .main {
   max-width: 1200px;
   margin: 0 auto;
+  padding: $spacing-md $spacing-sm;
 
   @media (max-width: $mobile) {
-    padding: $spacing-xs;
+    padding: 0;
   }
 
   @media (min-width: $mobile) {
@@ -15,6 +16,15 @@
 
 .featured-news {
   margin-bottom: $spacing-lg;
+
+  @media (max-width: $mobile) {
+    margin-bottom: $spacing-md;
+    margin: 0 (-$spacing-sm) $spacing-md;
+  }
+
+  @media (min-width: $mobile) {
+    margin-bottom: $spacing-xl;
+  }
 }
 
 .news-list {
@@ -23,12 +33,58 @@
     padding: 0 $spacing-sm;
 
     h3 {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: $text-color;
       display: flex;
       align-items: center;
       gap: $spacing-sm;
+
+      i {
+        color: $primary-color;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: $spacing-sm;
+      margin-bottom: $spacing-sm;
+      border-bottom: 1px solid #eee;
+
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-sm;
+
+    &-icon {
+      background: $bg-color;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $border-radius-sm;
+      color: $primary-color;
+    }
+
+    &-text {
+      font-weight: 500;
+      font-size: 0.95rem;
     }
   }
 }
@@ -47,45 +103,203 @@
 
   @media (max-width: $mobile) {
     grid-template-columns: 1fr;
-    gap: $spacing-sm;
+    gap: $spacing-md;
   }
 }
 
 // Breaking news banner
 .breaking-news {
   background: $secondary-color;
-  padding: $spacing-xs $spacing-sm;
   font-size: 0.9rem;
   font-weight: 500;
 
   @media (max-width: $mobile) {
-    font-size: 0.8rem;
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "⚡";
+      margin-right: $spacing-xs;
+    }
+  }
+
+  @media (min-width: $mobile) {
+    padding: $spacing-xs $spacing-lg;
   }
 
   span {
     color: #666;
+    font-weight: 600;
     margin-right: $spacing-sm;
   }
 }
 
-// Weather widget (desktop only)
+// Weather widget
 .weather-widget {
   display: none;
 
   @media (min-width: $mobile) {
-    display: flex;
-    align-items: center;
-    gap: $spacing-md;
-    padding: $spacing-sm $spacing-lg;
+    display: block;
+    padding: $spacing-xs $spacing-lg;
     background: #f5f5f5;
+    border-top: 1px solid #eee;
+
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      padding: $spacing-xs 0;
+      border-left: 1px solid #eee;
+      padding-left: $spacing-md;
+
+      &:first-child {
+        border-left: none;
+        padding-left: 0;
+      }
+    }
 
     &__location {
       font-weight: 500;
+      font-size: 0.85rem;
+      color: #666;
     }
 
     &__temp {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+
+      i {
+        color: $secondary-color;
+      }
+    }
+
+    &__forecast {
+      font-size: 0.85rem;
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+
+      i {
+        color: #999;
+      }
+    }
+  }
+}
+
+.section-actions {
+  display: flex;
+  gap: $spacing-sm;
+  align-items: center;
+
+  .premium-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    background: $primary-color;
+    color: white;
+    border: none;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-sm;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    i {
+      font-size: 1rem;
+    }
+  }
+}
+
+.news-filter {
+  display: none;
+  background: #f5f5f5;
+  border-bottom: 1px solid #eee;
+
+  @media (min-width: $mobile) {
+    display: block;
+    padding: $spacing-xs 0;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 $spacing-lg;
+    }
+
+    &__label {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #666;
+      text-transform: uppercase;
+
+      i {
+        color: $primary-color;
+        font-size: 1.2rem;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      gap: $spacing-sm;
+    }
+
+    &__button {
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-xs;
+      padding: $spacing-xs $spacing-sm;
+      border: none;
+      background: none;
+      font-size: 0.85rem;
+      color: #666;
+      cursor: pointer;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+
+      i {
+        font-size: 1.1rem;
+      }
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      &--active {
+        background: white;
+        color: $primary-color;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+        i {
+          color: $primary-color;
+        }
+
+        &:hover {
+          background: white;
+        }
+      }
     }
   }
 }

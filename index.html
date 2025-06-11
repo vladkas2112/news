@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>News Portal</title>
+    <title>Onet - Jesteś na bieżąco</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <!-- Material Design Icons -->
@@ -12,51 +12,147 @@
   </head>
   <body>
     <div class="breaking-news">
-      <span>07:25</span> Najpierw usłyszeli huk, potem ostry pisk, a...
+      <span>07:25</span> Najpierw usłyszeli huk, potem ostry pisk, a na koniec...
     </div>
 
     <header class="header">
-      <div class="header__container">
-        <div class="header__logo">
-          <svg class="logo" width="120" height="32" viewBox="0 0 120 32">
-            <circle cx="16" cy="16" r="16" fill="#FFD700"/>
-            <text x="40" y="24" fill="#000" style="font-size: 24px; font-weight: bold;">onet</text>
-          </svg>
-        </div>
+      <div class="header__top">
+        <div class="header__container">
+          <a href="/" class="header__logo">
+            <svg class="main-logo" width="100" height="32" viewBox="0 0 100 32">
+              <circle cx="16" cy="16" r="14" fill="#FFD700"/>
+              <text x="38" y="22" fill="#000" style="font-size: 24px; font-weight: 700; font-family: 'Open Sans', Arial;">onet</text>
+            </svg>
+          </a>
 
-        <div class="header__search">
-          <input type="text" placeholder="Szukaj">
-          <img src="/public/vite.svg" alt="Google" height="20">
-          <button class="search-button">SZUKAJ</button>
-        </div>
+          <div class="header__search desktop-only">
+            <input type="text" class="search-input" placeholder="Szukaj">
+            <button class="search-google">
+              <img src="https://www.google.com/favicon.ico" alt="Google">
+              SZUKAJ
+            </button>
+          </div>
 
-        <nav class="header__nav">
+          <div class="header__mobile-menu">
+            <a href="#" class="header__search-icon">
+              <i class="mdi mdi-magnify"></i>
+            </a>
+            
+            <a href="#" class="header__sympatia">
+              <i class="mdi mdi-heart-outline"></i>
+              <span>SYMPATIA</span>
+            </a>
+            
+            <a href="#" class="header__game">
+              <i class="mdi mdi-gamepad-variant"></i>
+            </a>
+          </div>
+
+          <div class="header__service-links desktop-only">
+            <a href="#" class="service-link"><i class="mdi mdi-heart-outline"></i>SYMPATIA</a>
+            <a href="#" class="service-link"><i class="mdi mdi-gamepad-variant"></i>GRY</a>
+            <a href="#" class="service-link"><i class="mdi mdi-file-document-outline"></i>OGŁOSZENIA</a>
+            <a href="#" class="service-link"><i class="mdi mdi-ticket-percent"></i>RABATY</a>
+          </div>
+
+          <button class="header__premium-btn">
+            <span class="premium-dot"></span>premium
+          </button>
+
+          <div class="header__actions">
+            <button class="icon-button icon-button--notification">
+              <i class="mdi mdi-bell-outline"></i>
+              <span class="notification-badge">1</span>
+            </button>
+            <button class="icon-button">
+              <i class="mdi mdi-email-outline"></i>
+            </button>
+            <button class="icon-button">
+              <i class="mdi mdi-account-outline"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <nav class="header__nav">
+        <div class="header__container">
           <ul class="nav__list">
-            <li><a href="#" class="nav__link">WIADOMOŚCI</a></li>
-            <li><a href="#" class="nav__link">SPORT</a></li>
-            <li><a href="#" class="nav__link premium">PREMIUM</a></li>
-            <li><a href="#" class="nav__link">BIZNES</a></li>
-            <li class="desktop-only"><a href="#" class="nav__link">REGIONALNE</a></li>
-            <li class="desktop-only"><a href="#" class="nav__link">POGODA</a></li>
+            <li><a href="#" class="nav__link active">Wiadomości</a></li>
+            <li><a href="#" class="nav__link">Sport</a></li>
+            <li><a href="#" class="nav__link">Biznes</a></li>
+            <li><a href="#" class="nav__link premium">Premium</a></li>
+            <li><a href="#" class="nav__link">Regionalne</a></li>
+            <li><a href="#" class="nav__link">Pogoda</a></li>
+            <li><a href="#" class="nav__link">Wideo</a></li>
+            <li><a href="#" class="nav__link">Motoryzacja</a></li>
+            <li><a href="#" class="nav__link">Nieruchomości</a></li>
+            <li><a href="#" class="nav__link icon-only"><i class="mdi mdi-dots-horizontal"></i></a></li>
           </ul>
         </nav>
+      </div>
 
-        <div class="header__actions">
-          <button class="icon-button icon-button--notification"><i class="mdi mdi-bell"></i></button>
-          <button class="icon-button"><i class="mdi mdi-email"></i></button>
-          <button class="icon-button"><i class="mdi mdi-account"></i></button>
+      <div class="news-filter desktop-only">
+        <div class="news-filter__container">
+          <div class="news-filter__label">
+            <i class="mdi mdi-chart-line"></i>
+            O TYM SIĘ MÓWI
+          </div>
+          <div class="news-filter__buttons">
+            <button class="news-filter__button news-filter__button--active">
+              <i class="mdi mdi-trending-up"></i>
+              Najnowsze
+            </button>
+            <button class="news-filter__button">
+              <i class="mdi mdi-fire"></i>
+              Najpopularniejsze
+            </button>
+            <button class="news-filter__button">
+              <i class="mdi mdi-star"></i>
+              Premium
+            </button>
+            <button class="news-filter__button">
+              <i class="mdi mdi-newspaper-variant"></i>
+              Tylko Fakty
+            </button>
+            <button class="news-filter__button">
+              <i class="mdi mdi-earth"></i>
+              Świat
+            </button>
+            <button class="news-filter__button">
+              <i class="mdi mdi-account-group"></i>
+              Społeczeństwo
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="weather-widget desktop-only">
-        <div class="weather-widget__location">
-          Warszawa
-        </div>
-        <div class="weather-widget__temp">
-          24° <i class="mdi mdi-weather-sunny"></i>
-        </div>
-        <div class="weather-widget__forecast">
-          Jutro: 32° <i class="mdi mdi-weather-partly-cloudy"></i>
+        <div class="weather-widget__list">
+          <div class="weather-widget__item">
+            <div class="weather-widget__location">Warszawa</div>
+            <div class="weather-widget__temp">24° <i class="mdi mdi-weather-sunny"></i></div>
+            <div class="weather-widget__forecast">Jutro: 32° <i class="mdi mdi-weather-partly-cloudy"></i></div>
+          </div>
+          <div class="weather-widget__item">
+            <div class="weather-widget__location">Kraków</div>
+            <div class="weather-widget__temp">22° <i class="mdi mdi-weather-sunny"></i></div>
+            <div class="weather-widget__forecast">Jutro: 30° <i class="mdi mdi-weather-partly-cloudy"></i></div>
+          </div>
+          <div class="weather-widget__item">
+            <div class="weather-widget__location">Gdańsk</div>
+            <div class="weather-widget__temp">20° <i class="mdi mdi-weather-cloudy"></i></div>
+            <div class="weather-widget__forecast">Jutro: 25° <i class="mdi mdi-weather-rainy"></i></div>
+          </div>
+          <div class="weather-widget__item">
+            <div class="weather-widget__location">Wrocław</div>
+            <div class="weather-widget__temp">23° <i class="mdi mdi-weather-sunny"></i></div>
+            <div class="weather-widget__forecast">Jutro: 31° <i class="mdi mdi-weather-partly-cloudy"></i></div>
+          </div>
+          <div class="weather-widget__item">
+            <div class="weather-widget__location">Poznań</div>
+            <div class="weather-widget__temp">22° <i class="mdi mdi-weather-partly-cloudy"></i></div>
+            <div class="weather-widget__forecast">Jutro: 29° <i class="mdi mdi-weather-partly-cloudy"></i></div>
+          </div>
         </div>
       </div>
     </header>
@@ -68,20 +164,29 @@
             <img src="https://picsum.photos/1200/600" alt="Plaża nad morzem">
             <span class="news-card__badge premium">premium</span>
           </div>
-          <div class="news-card__content">
-            <h2 class="news-card__title">Najlepsze miejsca na wakacje nad polskim morzem. Ranking plaż 2024</h2>
-            <div class="news-card__actions">
-              <button class="action-button"><i class="mdi mdi-thumb-up"></i> Lubię to</button>
-              <button class="action-button"><i class="mdi mdi-bookmark-outline"></i> Zapisz</button>
-              <button class="action-button"><i class="mdi mdi-share"></i> Udostępnij</button>
-            </div>
+          <h2 class="news-card__title">Gdzie na wakacje nad polskim morzem? Ranking plaż 2024</h2>
+          <div class="news-card__actions">
+            <button class="action-button"><i class="mdi mdi-thumb-up"></i> Lubię to</button>
+            <button class="action-button"><i class="mdi mdi-bookmark-outline"></i> Zapisz</button>
+            <button class="action-button"><i class="mdi mdi-share-variant"></i> Udostępnij</button>
           </div>
         </article>
       </section>
 
       <section class="news-list">
         <div class="section-header">
-          <h3><i class="mdi mdi-newspaper"></i> Wiadomości</h3>
+          <div class="section-label">
+            <span class="section-label-icon">
+              <i class="mdi mdi-newspaper"></i>
+            </span>
+            <span class="section-label-text">Wiadomości</span>
+          </div>
+          <div class="section-actions">
+            <button class="premium-btn">
+              <i class="mdi mdi-star"></i>
+              premium
+            </button>
+          </div>
         </div>
         <div class="news-grid">
           <article class="news-card">
@@ -91,6 +196,12 @@
             </div>
             <div class="news-card__content">
               <h3 class="news-card__title">Rosyjski politolog: Putin sprowadził na Rosję nową wojnę</h3>
+              <button class="news-card__bookmark">
+                <i class="mdi mdi-bookmark-outline"></i>
+              </button>
+              <button class="news-card__share">
+                <i class="mdi mdi-share"></i>
+              </button>
             </div>
           </article>
 
@@ -108,6 +219,9 @@
           </article>
 
           <article class="news-card">
+            <div class="news-card__image">
+              <img src="https://picsum.photos/400/302" alt="Pawlak">
+            </div>
             <div class="news-card__content">
               <h3 class="news-card__title">Dolce vita Pawlaka. Ford bestia z USA i polędwica na koszt podatnika</h3>
             </div>
